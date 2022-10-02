@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Profesor extends Persona{
 	private int numMatricula;
@@ -7,27 +8,9 @@ public class Profesor extends Persona{
 
 
 	public Profesor() {
-		System.out.print("Ingrese matricula :");
-		numMatricula = teclado.nextInt();
-		mostrarMateria();
-		mostrarDatosDocente();
-		
+		super();	
 }
 
-
-	public String mostrarMateria() {
-		System.out.print("Ingrese Materia :");
-		materia = teclado.next();
-		return materia;
-	}
-	
-	public void mostrarDatosDocente() {
-		System.out.println("Nombre:" + nombre);
-		System.out.println("Apellido:" + apellido);
-		System.out.println("Dni:" + numDni);
-		System.out.println("Numero matricula:" + numMatricula);
-		System.out.println("materia cursada:" + materia);
-	}
 	public int getNumMatricula() {
 		return numMatricula;
 	}
@@ -44,7 +27,21 @@ public class Profesor extends Persona{
 		this.materia = materia;
 	}
 	
+	public void mostrarDatosDocente() {
+		System.out.println(this.toString());
+	}
 	
+	@Override
+	public String toString() {
+		return "Profesor{" +
+				"numMatricula=" + numMatricula +
+				", materia='" + materia + '\'' +
+				'}';
+	}
+	
+	public void mostrarMateria() {
+		System.out.println(this.getMateria());
+	}
 	
 	
 	

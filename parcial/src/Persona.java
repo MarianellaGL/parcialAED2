@@ -7,18 +7,13 @@ public abstract class Persona {
 	protected int numDni;
 
 
-	public Persona() {
-		teclado=new Scanner(System.in);
-		mostrarDatosPersonales();
+	public Persona(String nombre, String apellido, int numDni) {
+		this.setApellido(apellido);
+		this.setNombre(nombre);
+		this.setNumDni(numDni);
 	}
 	
-	public void mostrarDatosPersonales() {
-		System.out.print("Ingrese el nombre :");
-		nombre = teclado.next();
-		System.out.print("Ingrese el apellido :");
-		apellido = teclado.next();
-		System.out.print("Ingrese el dni :");
-		numDni = teclado.nextInt();
+	public Persona() {
 		
 	}
 
@@ -44,6 +39,20 @@ public abstract class Persona {
 
 	public void setNumDni(int numDni) {
 		this.numDni = numDni;
+	}
+	
+	public void mostrarDatosPersonales() {
+		System.out.println(this.toString());
+		
+	}
+	
+	@Override
+	public String toString() {
+		return "Persona{" +
+				"nombre=" + nombre + '\'' +
+				", apellido =" + apellido + '\'' + 
+				", numDni=" + numDni +
+				'}';
 	}
 
 }
